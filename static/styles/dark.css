@@ -1,0 +1,27 @@
+:root{
+    --bgColor: black;
+    --gray: rgb(47, 47, 47);
+    --headings: gray;
+  }
+body{
+    color: white;
+}
+  /* NavBar */
+  .navbar{
+      background: rgb(0, 0, 0, 0.6) !important;
+  }
+
+.intro-wrapper{
+    background-color: white;
+    color: black
+}
+
+#MySkills{
+    border: 2px solid white;
+      
+  }
+ 
+.service{
+    border: 1px solid white;
+}
+

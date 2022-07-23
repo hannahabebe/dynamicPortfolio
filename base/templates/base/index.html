@@ -1,0 +1,244 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+<head>
+  <!--Meta Tags-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Personal Portfolio</title>
+</head>
+
+  {% block pagecontent %}
+  <div>
+    <!--Nav Begin-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container-fluid" >
+        <a class="navbar-brand">PERSONAL PORTFOLIO</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#Home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#About">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#MySkills">My Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Contact">Contact</a>
+            </li>
+          </ul>          
+          <div class="pl-5 ml-5 ">
+            <div class="pl-5 ml-5 ">
+              <div class="pl-5 ml-5 ">
+                <div class="pl-5 ml-5 ">
+                  <div class="pl-5 ml-5 ">
+                    <div class="pl-5 ml-5 ">
+                        <a href="https://twitter.com/HannaAbebe6" target="blank" class="fa fa-twitter"></a>
+                        <a href="https://www.linkedin.com/in/hanna-abebe-2245841ba" target="blank" class="fa fa-linkedin"></a>
+                        <a href="https://www.snapchat.com/add/hanna_23h?sender_web_id=634c0197-3b24-4ac7-9f32-924cfeda2e2c&device_type=desktop&is_copy_url=true" target="blank" class="fa fa-snapchat-ghost"></a>
+                        <a href="" target="blank" class="fa fa-github"></a>
+                    </div>  
+                  </div>  
+                </div>  
+              </div>    
+            </div>
+          </div>  
+        </div>
+      </div>
+    </nav>
+  </div>
+        <!--Nav End-->
+    <!--Home-->
+    <section id="Home">
+      <div class="main-container mt-3 mb-5">
+          <div class="wrapper">
+              <div class="greeting-wrapper">
+                  <h1>Welcome!</h1>
+                  <p>I'm Hanna Abebe, a 3<sup>rd</sup> Year Computer Science Student.</p>
+              </div>
+          </div>
+      </div>
+    </section>
+
+    <!--About Page-->
+    <section id = "About"><!--class="container mt-3 mb-5"-->
+      <div class="main-container">
+        <div class="intro-wrapper">
+
+          <div class = "nav-wrapper">
+            <h2 class="post-heading text-center display-3">About Me</h2>
+            <hr class="w-50">
+          </div>
+
+          <div class="left-column"><!--class="col-lg-6 about"-->
+            <img id="about-pic" src="{%static 'images/aboutMeImg.jpeg'%}"> <!--TO BE EDITTED-->
+            <h5 style="text-align:center; line-height: 0;">Personalize Theme</h5>
+            
+            <div id="theme-opt-wrapper" class="mt-3">
+              <div data-mode="light" id = "light-mode" class="theme-dots"></div>
+              <div data-mode="cyan" id = "cyan-mode" class="theme-dots"></div>
+              <div data-mode="brown" id = "brown-mode" class="theme-dots"></div>
+              <div data-mode="gray" id = "gray-mode" class="theme-dots"></div>
+              <div data-mode="dark" id = "dark-mode" class="theme-dots"></div>
+            </div>
+
+            <p id="settings-note">Your theme preferences will be kept for <br> your future visit.</p>
+          </div>
+        
+
+          <div class="right-column"><!--class="col-lg-6"-->
+            <br><br><br>
+            <p class=" Paragraph">My Name is Hanna Abebe. I am a 3<sup>rd</sup> Year
+                Computer Science Student <a href= "https://actamericancollege.com" class="anchor" target="blank"> @<abbr title="American College Of Technology">ACT</abbr>  </a>.
+                I have Taken Some of the Basic Programming Languages i.e. C++, SQL, & Java and also
+                Markup and Scripting Languages:- HTML, CSS, & Javascript. In Addition, I am a Small-Business Owner.
+                You'll Found More on the <a href="#Services" class="anchor">Services</a> Page.</p>
+            <div id="row">
+              <div id="column">
+                <img src="{%static 'images/cert-1014-13316451.jpg'%}">
+              </div>
+              <div id="column">
+                <img src="{%static 'images/cert-1023-13316451.jpg'%}">
+              </div>
+              <div id="column">
+                <img src="{%static 'images/cert-1081-13316451.jpg'%}">
+              </div>
+              <div id="column">
+                <img src="{%static 'images/CPlusPlus_certificate.jpg'%}">
+              </div>
+            </div>
+            <br>
+            <div class="resume"> 
+              <a target="blank" href="Hanna Abebe.pdf" class="btn btn-outline-light" >Download Resume!</a></div>
+          </div>
+        </div>
+      </div>
+    </Section>
+
+    <!--Skills-->
+    <section id="MySkills" class="mt-3 mb-5">
+      <div class="post-heading text-center">
+        <h2 class="display-3">My Skills</h2>
+        <hr class="w-50 mx-auto">
+      </div>
+
+      
+      <div class="main-container">
+        <div class="mx-auto">
+          <div class="row mb-5 cont_in_3 rounded-3">
+
+            {% for mySkill in skills %}
+            <div class="col-lg-4 col-md-6 col-sm-6 col-6">
+              <div class="holder">
+                <div class="skills">{{mySkill.skills}}%</div>
+                <img src="{{mySkill.thumbnail.url}}" width="300px" class="center">
+              </div>
+            </div>
+            {% empty %}
+            <h3>There are No Skills.</h3>
+            {% endfor %}
+            
+          </div>
+        </div>
+      </div>
+     
+    </section>
+    
+    <!--Services Page-->
+    <section id = "Services" >
+      <div class="row">
+        <div class="post-heading text-center container mt-3">
+          <h2 class="display-3">Services</h2>
+          <hr class="w-50 mx-auto">
+        </div>
+      </div>
+      <div class="row gy-4">
+        <div class="col-lg-6 mx-auto">
+          <div class="service">
+            <div class="icon">
+              <img src="{%static 'images/Blanks.png'%}" alt="Printing Services">
+            </div>
+            <div>
+              <h1>Printing Services</h1>
+              <p style=" font-family: 'Alegreya', serif;">Customizable #Mugs #Pillows #Tshirts👕 #Hoodies #KeyChains #WaterBottles #Cap🧢 #Plates #FaceMasks</p>
+              <p class="price">ETB 150-500</p>
+              <button><a href="https://t.me/customMade21" target="blank">Join for More</a>😊</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row gy-4">
+        {% for service in services %}
+        <div class="col-lg-3 col-md-4 col-sm-6 col-6 ">
+          <div class="card">
+            <img src="{{service.thumbnail.url}}" alt="Custom Mug" style="width:100%"> 
+            <h1>{{service.title}}</h1>
+            <p class="price">ETB {{service.price}}</p>
+            <p style="font-family: 'Alegreya', serif;">{{service.description}}</p>
+            <p><button><a href="https://t.me/customMade21"  target="blank">See More</a></button></p>
+          </div>
+        </div>
+        {% empty %}
+        <h3>There are No Services in the Database.</h3>
+        {% endfor %}
+
+        <!-- Icons-->
+        <div class="col-lg-3 col-md-4 col-sm-6 col-6 img-fluid">
+          <div class="card" style=" display: block;">
+            <img src="{%static 'images/Profile.jpg'%}" alt="21 Gifts" style="width:100%">
+            <h1>xxi.Gifts</h1>
+            <p class="title">Ethiopia, Addis Ababa</p>
+            <div class="stickyicon-list">
+              <a href="https://t.me/customMade21" target="blank" class="tg"><i class="fa fa-telegram"></i></a>
+              <a href="https://www.instagram.com/xxi.gifts/" target="blank" class="ig"><i class="fa fa-instagram"></i></a>
+              <a href="https://vm.tiktok.com/ZMLq7sj8V/" target="blank" class="tt"><i class="material-icons">tiktok</i></a>
+            </div>
+            <p><button><a href="#Contact">Contact</a></button></p>
+          </div>
+        </div>
+
+    </div>
+  </section>
+    
+    <!--Contact Page-->
+    <section id = "Contact" class="container mt-3 mb-5">
+      <div class="post-heading text-center">
+        <h2 class="display-3">Contact</h2>
+        <hr class="w-50 mx-auto">
+      </div>
+
+      <div class="container">
+        <form method = "POST" action="{% url 'contact' %}">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      
+          <label for="country">Country</label>
+          {% csrf_token %}
+          <select id="country" name="country">
+            <option value="Your Country..">Your Country..</option>
+            <option value="Ethiopia">Ethiopia</option>
+            <option value="canada">Canada</option>
+            <option value="South Africa">South Africa</option>
+          </select>
+      
+          <label for="subject">Message</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+          
+          {{form}}
+          <input type="submit" value="submit">
+        </form>
+      </div>
+    </section>
+    {% endblock pagecontent %}

@@ -1,0 +1,25 @@
+:root{
+    --homeColor: gray;
+    --bgColor: gray;
+    --gray: rgb(209, 208, 208);
+    --headings: black;
+  }
+  /* NavBar */
+  .navbar{
+      background: rgb(128, 128, 128, 0.6) !important;
+  }
+
+  /* About Page */
+#About{
+    background-color: white;
+}
+
+/* Skill Page */
+.holder{
+    background-color: white;
+}
+
+/* Service Page */
+#Services{
+    background-color: white;
+}
